@@ -24,6 +24,18 @@ export interface ClassNotes {
 export const planSchema = {
   type: "object",
   properties: {
+    student_notes: {
+      type: "array",
+      items: {
+        type: "object",
+        properties: {
+          student: { type: "string" },
+          avoid: { type: "array", items: { type: "string" } },
+          modification: { type: "string" },
+        },
+        required: ["student", "avoid", "modification"],
+      },
+    },
     theme: { type: "string" },
     blocks: {
       type: "array",
@@ -49,20 +61,8 @@ export const planSchema = {
         required: ["name", "minutes", "poses"],
       },
     },
-    student_notes: {
-      type: "array",
-      items: {
-        type: "object",
-        properties: {
-          student: { type: "string" },
-          avoid: { type: "array", items: { type: "string" } },
-          modification: { type: "string" },
-        },
-        required: ["student", "avoid", "modification"],
-      },
-    },
   },
-  required: ["theme", "blocks", "student_notes"],
+  required: ["student_notes", "theme", "blocks"],
 };
 
 export const notesSchema = {

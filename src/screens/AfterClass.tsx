@@ -4,7 +4,7 @@ import { addLogEntry, listStudents, recentSessions, saveNotes, type Session, typ
 import { chatJson } from "../ollama";
 import { notesMessages, notesSchema, type ClassNotes, type Plan } from "../prompts";
 
-export default function AfterClass({ config }: { config: Config }) {
+export default function AfterClass({ config, active }: { config: Config; active: boolean }) {
   const [sessions, setSessions] = useState<Session[]>([]);
   const [students, setStudents] = useState<Student[]>([]);
   const [sessionId, setSessionId] = useState<number | null>(null);
@@ -14,12 +14,13 @@ export default function AfterClass({ config }: { config: Config }) {
   const [error, setError] = useState("");
 
   useEffect(() => {
+    if (!active) return;
     recentSessions().then((s) => {
       setSessions(s);
-      if (s[0]) setSessionId(s[0].id);
+      setSessionId((current) => current ?? s[0]?.id ?? null);
     });
     listStudents().then(setStudents);
-  }, []);
+  }, [active]);
 
   const session = sessions.find((s) => s.id === sessionId);
 

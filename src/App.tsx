@@ -53,11 +53,11 @@ export default function App() {
         ))}
       </nav>
       <main>
-        {tab === "Class prep" && <ClassPrep config={config} />}
-        {tab === "After class" && <AfterClass config={config} />}
-        {tab === "Students" && <Students />}
-        {tab === "Newsletter" && <Newsletter config={config} />}
-        {tab === "Settings" && <Settings config={config} onSave={setConfig} />}
+        <div hidden={tab !== "Class prep"}><ClassPrep config={config} active={tab === "Class prep"} /></div>
+        <div hidden={tab !== "After class"}><AfterClass config={config} active={tab === "After class"} /></div>
+        <div hidden={tab !== "Students"}><Students /></div>
+        <div hidden={tab !== "Newsletter"}><Newsletter config={config} /></div>
+        <div hidden={tab !== "Settings"}><Settings config={config} onSave={setConfig} /></div>
       </main>
     </div>
   );
