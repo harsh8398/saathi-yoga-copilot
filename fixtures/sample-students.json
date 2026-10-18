@@ -1,0 +1,52 @@
+[
+  {
+    "name": "Meera Shah",
+    "email": "meera@example.com",
+    "age_range": "65+",
+    "experience_level": "Beginner",
+    "goals": "Balance and flexibility",
+    "injuries": "Arthritis in both knees",
+    "surgeries": "Right hip replacement, 2022",
+    "notes": "Prefers chair options"
+  },
+  {
+    "name": "Ravi Patel",
+    "email": "ravi@example.com",
+    "age_range": "35-44",
+    "experience_level": "Some experience",
+    "goals": "Stress relief",
+    "injuries": "Lower back strain",
+    "surgeries": "",
+    "notes": ""
+  },
+  {
+    "name": "Anita Brooks",
+    "email": "anita@example.com",
+    "age_range": "45-54",
+    "experience_level": "Regular practitioner",
+    "goals": "Deepen pranayama practice",
+    "injuries": "",
+    "surgeries": "",
+    "notes": ""
+  },
+  {
+    "name": "Tom Lee",
+    "email": "tom@example.com",
+    "age_range": "55-64",
+    "experience_level": "New to yoga",
+    "goals": "Mobility",
+    "injuries": "Tight shoulders, previous rotator cuff tear",
+    "surgeries": "",
+    "notes": ""
+  },
+  {
+    "name": "Priya Nair",
+    "email": "priya@example.com",
+    "age_range": "25-34",
+    "experience_level": "Beginner",
+    "goals": "Better sleep",
+    "injuries": "",
+    "surgeries": "",
+    "notes": "Pregnant, second trimester"
+  }
+]

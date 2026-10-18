@@ -1,0 +1,68 @@
+:root {
+  --bg: #faf6ef;
+  --panel: #fffdf8;
+  --ink: #2f2a24;
+  --muted: #8a8174;
+  --accent: #b5532a;
+  --accent-soft: #f3e1d4;
+  --line: #e8dfd0;
+  font-family: "Iowan Old Style", Georgia, serif;
+  color: var(--ink);
+  background: var(--bg);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1f1b17;
+    --panel: #2a251f;
+    --ink: #f1e9dc;
+    --muted: #a99f90;
+    --accent: #e08a5c;
+    --accent-soft: #3a2d24;
+    --line: #3a342c;
+  }
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); }
+
+.app { display: grid; grid-template-columns: 220px 1fr; min-height: 100vh; }
+
+nav { padding: 28px 18px; border-right: 1px solid var(--line); display: flex; flex-direction: column; gap: 6px; }
+nav h1 { margin: 0; font-size: 28px; color: var(--accent); }
+.tagline { margin: 0 0 18px; font-size: 13px; color: var(--muted); }
+nav button { text-align: left; border: 0; background: none; padding: 10px 12px; border-radius: 8px; font: inherit; color: inherit; cursor: pointer; }
+nav button.active { background: var(--accent-soft); color: var(--accent); }
+
+main { padding: 32px 40px; max-width: 880px; }
+h2 { margin-top: 0; font-size: 26px; }
+h4 { margin: 0 0 6px; }
+
+.row { display: flex; gap: 10px; align-items: center; margin-bottom: 16px; flex-wrap: wrap; }
+.muted { color: var(--muted); font-size: 14px; }
+.error { color: #c0392b; }
+
+button, .button, select, input, textarea {
+  font: inherit; color: inherit; background: var(--panel);
+  border: 1px solid var(--line); border-radius: 8px; padding: 8px 12px;
+}
+button, .button { cursor: pointer; }
+button.primary { background: var(--accent); color: #fff; border-color: var(--accent); }
+button:disabled { opacity: 0.5; cursor: default; }
+textarea { width: 100%; resize: vertical; }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+.chip { border: 1px solid var(--line); border-radius: 999px; padding: 6px 14px; cursor: pointer; background: var(--panel); }
+.chip.on { background: var(--accent-soft); border-color: var(--accent); }
+.chip input { display: none; }
+
+.card, .plan { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 18px 20px; margin: 14px 0; }
+.card pre { white-space: pre-wrap; font: inherit; margin: 8px 0 12px; }
+.form { display: grid; gap: 12px; }
+.form label { display: grid; gap: 4px; font-size: 14px; color: var(--muted); text-transform: capitalize; }
+.form input, .form textarea { text-transform: none; color: var(--ink); }
+
+.plan h3 { margin: 0 0 4px; font-size: 22px; }
+.callouts { display: grid; gap: 10px; margin: 14px 0; }
+.callout { background: var(--accent-soft); border-left: 4px solid var(--accent); border-radius: 8px; padding: 10px 14px; font-size: 15px; }
+.block ul { margin: 6px 0 14px; padding-left: 20px; line-height: 1.5; }
